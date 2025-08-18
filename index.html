@@ -1,128 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Girish Bhattarai | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girish Bhattarai | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0077b6;
+      --secondary: #00b4d8;
+      --accent: #ff6b6b;
+      --dark: #222;
+      --light: #f9f9f9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--dark);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+    nav h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 120px 20px 80px;
+    }
+    header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin: 10px 0;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 12px 25px;
+      border-radius: 25px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 30px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark);
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: var(--secondary);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Girish Bhattarai</h1>
-            <p>Mechanical Engineer | Technical Writer | Content Creator</p>
-            <a href="mailto:girishwasistha@gmail.com" class="btn">Contact Me</a>
-        </div>
-    </header>
+  <nav>
+    <h1>GB</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I am a Mechanical Engineering graduate with hands-on experience in mechanical design,
-                industrial maintenance, and composite manufacturing. I have excellent communication,
-                problem-solving, and presentation skills, and I thrive in team-oriented environments.
-                My goal is to combine technical expertise with clear communication to deliver impactful work.
-            </p>
-        </div>
-    </section>
+  <header>
+    <h2>Girish Bhattarai</h2>
+    <p>Mechanical Engineer | Technical Writer | Content Creator</p>
+    <a href="mailto:girishwasistha@gmail.com" class="btn">Contact Me</a>
+  </header>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Design & Analysis:</strong> SolidWorks, Fusion 360, Ansys, AutoCAD</li>
-                <li><strong>Programming:</strong> MATLAB, Python</li>
-                <li><strong>Other Tools:</strong> MS Office, Google Workspace</li>
-                <li><strong>Soft Skills:</strong> Problem Solving, Communication, Presentation, Critical Thinking</li>
-            </ul>
-        </div>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a Mechanical Engineering graduate with hands-on experience in mechanical design,
+      industrial maintenance, and composite manufacturing. I combine technical expertise with clear communication to deliver impactful work.</p>
+  </section>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <h3>Maintenance Engineer Intern – Dairy Development Corporation</h3>
-            <p>Apr 2024 – May 2024</p>
-            <ul>
-                <li>Assisted in troubleshooting and maintenance of dairy processing systems.</li>
-                <li>Maintained HVAC systems and supported equipment servicing.</li>
-                <li>Worked with senior technicians to ensure uninterrupted plant operations.</li>
-            </ul>
-
-            <h3>Event Manager & Content Writer – Team Shireto</h3>
-            <p>Jul 2023 – Mar 2025</p>
-            <ul>
-                <li>Organized college events and managed promotional content across platforms.</li>
-                <li>Collaborated with technical teams to support ongoing initiatives.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Helmet Design & Fabrication Using FRP Composites:</strong> Designed 3D model, performed FEA, fabricated, and tested helmet.</li>
-                <li><strong>Comparative Air Pollution Study:</strong> Analyzed PM2.5 & PM10 levels in Kathmandu, identified seasonal trends.</li>
-                <li><strong>Paper Pencil Manufacturing Machine:</strong> Designed semi-automated rolling & feeding system, performed structural analysis.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <ul>
-                <li>SolidWorks Workshop – AMESIN, IOE Thapathali (Dec 2022)</li>
-                <li>Aeromodelling Workshop – Robotics and Automation Center, IOE Thapathali (Jun 2023)</li>
-            </ul>
-        </div>
-    </section>
-    <section id="gallery">
-        <div class="container">
-            <h2>Design Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="helmet.png" alt="Helmet CAD Design" onclick="openLightbox(this)">
-                    <p class="caption">Helmet CAD Model – SolidWorks</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="SpaceCapsule.png" alt="Space Capsule" onclick="openLightbox(this)">
-                    <p class="caption">Space Capsule</p>
-                </div>
-                
-                
-            </div>
-        </div>
-    </section>
-
-    <div id="lightbox" onclick="closeLightbox()">
-        <span id="closeBtn">&times;</span>
-        <img id="lightboxImg" src="" alt="">
-        <p id="lightboxCaption"></p>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card-grid">
+      <div class="card"><h3><i class="fa-solid fa-cube"></i> Design & Analysis</h3><p>SolidWorks, Fusion 360, Ansys, AutoCAD</p></div>
+      <div class="card"><h3><i class="fa-solid fa-code"></i> Programming</h3><p>MATLAB, Python</p></div>
+      <div class="card"><h3><i class="fa-solid fa-toolbox"></i> Tools</h3><p>MS Office, Google Workspace</p></div>
+      <div class="card"><h3><i class="fa-solid fa-users"></i> Soft Skills</h3><p>Problem Solving, Communication, Presentation</p></div>
     </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2025 Girish Bhattarai | 
-                <a href="mailto:girishwasistha@gmail.com">Email</a> | 
-                <a href="https://www.linkedin.com/in/girish-bhattarai/">LinkedIn</a> | 
-                <a href="https://blog.bhattaraigirish.com.np/">Blog Site</a>
-            </p>
-        </div>
-    </footer>
-<script>
-    function openLightbox(imgElement) {
-        document.getElementById("lightbox").style.display = "block";
-        document.getElementById("lightboxImg").src = imgElement.src;
-        document.getElementById("lightboxCaption").innerText = imgElement.alt;
-    }
-    
-    function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
-    }
-</script>      
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+      <div class="card"><h3>Helmet Design & Fabrication</h3><p>Designed 3D model, performed FEA, fabricated, and tested helmet using FRP composites.</p></div>
+      <div class="card"><h3>Comparative Air Pollution Study</h3><p>Analyzed PM2.5 & PM10 levels in Kathmandu, identified seasonal trends.</p></div>
+      <div class="card"><h3>Paper Pencil Manufacturing Machine</h3><p>Designed semi-automated rolling & feeding system, performed structural analysis.</p></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Design Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="helmet.png" alt="Helmet CAD Model">
+        <div class="gallery-caption">Helmet CAD Model – SolidWorks</div>
+      </div>
+      <div class="gallery-item">
+        <img src="SpaceCapsule.png" alt="Space Capsule">
+        <div class="gallery-caption">Space Capsule</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">Let's connect! You can reach me via email or LinkedIn.</p>
+    <div style="text-align:center;">
+      <a href="mailto:girishwasistha@gmail.com" class="btn">Email Me</a>
+      <a href="https://www.linkedin.com/in/girish-bhattarai/" class="btn">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Girish Bhattarai</p>
+    <p>
+      <a href="mailto:girishwasistha@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/girish-bhattarai/"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://blog.bhattaraigirish.com.np/"><i class="fa-solid fa-pen"></i></a>
+    </p>
+  </footer>
+
+  <script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
