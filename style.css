@@ -154,6 +154,9 @@ body {
     width: 100%;
     border-radius: 8px;
     transition: 0.3s;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
   .gallery-item img:hover {
     transform: scale(1.05);
@@ -163,7 +166,16 @@ body {
     font-weight: 500;
     color: #222;
   }
-  
+  .gallery-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    height: 220px;   /* fixed card height */
+    border-radius: 8px;
+    text-align: center;   /* centers text under image */
+    margin: 15px;         /* spacing between items */
+  }
   /* Lightbox */
   #lightbox {
     display: none;
