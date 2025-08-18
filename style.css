@@ -101,7 +101,7 @@ ul {
 .gallery-item p {
     margin: 10px;
     font-size: 0.9rem;
-
+}
 /* -------------------- Lightbox -------------------- */
 #lightbox {
     display: none;
@@ -155,5 +155,4 @@ footer {
 footer a {
     color: #90e0ef;
     text-decoration: none;
-}
 }
