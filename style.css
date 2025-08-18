@@ -77,9 +77,11 @@ ul {
 
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 200px;   /* fix height for uniformity */
+    object-fit: cover; /* crop image neatly */
     display: block;
 }
+
 
 .gallery-item p {
     margin: 10px;

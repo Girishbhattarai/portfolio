@@ -85,11 +85,11 @@
             <h2>Design Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="helmet.png" alt="Helmet CAD Design">
+                    <img src="helmet.png" alt="Helmet CAD Design" onclick="openLightbox(this)">
                     <p>Helmet CAD Model – SolidWorks</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="SpaceCapsule.png" alt="SpaceCapsule">
+                    <img src="SpaceCapsule.png" alt="SpaceCapsule" onclick="openLightbox(this)">
                     <p>Space Capsule</p>
                 </div>
                 
@@ -112,17 +112,16 @@
             </p>
         </div>
     </footer>
-    <script>
-        function openLightbox(imgElement) {
-            document.getElementById("lightbox").style.display = "block";
-            document.getElementById("lightboxImg").src = imgElement.src;
-            document.getElementById("lightboxCaption").innerText = imgElement.alt;
-        }
-        
-        function closeLightbox() {
-            document.getElementById("lightbox").style.display = "none";
-        }
-        </script>
-        
+<script>
+    function openLightbox(imgElement) {
+        document.getElementById("lightbox").style.display = "block";
+        document.getElementById("lightboxImg").src = imgElement.src;
+        document.getElementById("lightboxCaption").innerText = imgElement.alt;
+    }
+    
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>      
 </body>
 </html>
