@@ -160,7 +160,7 @@ body {
     transition: 0.3s;
     display: flex;
     flex-direction: column;   /* stack image and caption vertically */
-    height: 300px;            /* fixed card height */
+    height: 350px;          /* fixed card height */
     align-items: center;
     justify-content: center;
     border-radius: 8px;
