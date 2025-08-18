@@ -80,15 +80,49 @@
             </ul>
         </div>
     </section>
+    <section id="gallery">
+        <div class="container">
+            <h2>Design Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="helmet.png" alt="Helmet CAD Design">
+                    <p>Helmet CAD Model – SolidWorks</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="SpaceCapsule.png" alt="SpaceCapsule">
+                    <p>Space Capsule</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="closeBtn">&times;</span>
+        <img id="lightboxImg" src="" alt="">
+        <p id="lightboxCaption"></p>
+    </div>
 
     <footer>
         <div class="container">
             <p>© 2025 Girish Bhattarai | 
                 <a href="mailto:girishwasistha@gmail.com">Email</a> | 
-                <a href="https://www.linkedin.com/in/girish-bhattarai/">LinkedIn</a>| 
+                <a href="https://www.linkedin.com/in/girish-bhattarai/">LinkedIn</a> | 
                 <a href="https://blog.bhattaraigirish.com.np/">Blog Site</a>
             </p>
         </div>
     </footer>
+    <script>
+        function openLightbox(imgElement) {
+            document.getElementById("lightbox").style.display = "block";
+            document.getElementById("lightboxImg").src = imgElement.src;
+            document.getElementById("lightboxCaption").innerText = imgElement.alt;
+        }
+        
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+        </script>
+        
 </body>
 </html>
