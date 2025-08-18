@@ -70,40 +70,38 @@ ul {
 
 .gallery-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* center horizontally */
+    justify-content: flex-start;
     background: #fff;
-    height: 220px;   /* fixed card height */
     border-radius: 8px;
-    text-align: center;   /* centers text under image */
+    text-align: center;
     margin: 15px;
+    padding: 10px;            /* give some breathing room */
 }
 
 .gallery-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;  /* scale inside the box */
-    max-width: 250px;     /* adjust size as needed */
+    max-width: 250px;
+    height: auto;             /* keep aspect ratio */
     border-radius: 10px;
 }
 
+.gallery-item .caption {
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 16px;
+    color: #222;
+}
 
 .gallery-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-
 .gallery-item p {
     margin: 10px;
     font-size: 0.9rem;
-}
-.gallery-item .caption {
-    font-weight: bold;
-    margin-top: 8px;      /* little spacing under image */
-    font-size: 16px;      /* adjust text size */
-    color: #222;          /* darker text for readability */
-}
+
 /* -------------------- Lightbox -------------------- */
 #lightbox {
     display: none;
@@ -157,4 +155,5 @@ footer {
 footer a {
     color: #90e0ef;
     text-decoration: none;
+}
 }
