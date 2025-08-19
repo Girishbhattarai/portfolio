@@ -132,31 +132,44 @@
     </div>
   </section>
 
-  <!-- Lightbox -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <span id="closeBtn">&times;</span>
-    <img id="lightboxImg" src="" alt="">
-    <p id="lightboxCaption"></p>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Girish Bhattarai</p>
+    <!-- Lightbox -->
+    <div id="lightbox">
+      <span id="closeBtn">&times;</span>
+      <img id="lightboxImg" src="" alt="">
+      <p id="lightboxCaption"></p>
     </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    function openLightbox(imgElement) {
-      document.getElementById("lightbox").style.display = "block";
-      document.getElementById("lightboxImg").src = imgElement.src;
-      document.getElementById("lightboxCaption").innerText = imgElement.alt;
-    }
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  </script>
+  
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>© 2025 Girish Bhattarai</p>
+      </div>
+    </footer>
+  
+    <!-- Scripts -->
+    <script>
+      function openLightbox(imgElement) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightboxImg");
+        const lightboxCaption = document.getElementById("lightboxCaption");
+  
+        lightbox.style.display = "flex";   // show as flex for centering
+        lightboxImg.src = imgElement.src;
+        lightboxCaption.textContent = imgElement.alt;
+      }
+  
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+  
+      // Close when clicking outside the image
+      document.getElementById("lightbox").addEventListener("click", function(e) {
+        if (e.target.id === "lightbox" || e.target.id === "closeBtn") {
+          closeLightbox();
+        }
+      });
+    </script>
+  
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 
