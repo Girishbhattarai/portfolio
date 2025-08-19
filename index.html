@@ -33,7 +33,7 @@
     <div class="container hero" data-aos="fade-up">
       <h1>Girish Bhattarai</h1>
       <p>Mechanical Engineer | Technical Writer | Content Creator</p>
-      <a href="mailto:girishwasistha@gmail.com" class="btn-outline">Contact Me</a>
+      <a href="mailto:contact@bhattaraigirish.com.np" class="btn-outline">Contact Me</a>
     </div>
   </header>
 
@@ -126,8 +126,8 @@
   <section id="contact" data-aos="fade-up">
     <div class="container">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:contact@bhattaraigirish.com.np">contact@bhattaraigirish.com.np</a></p>
-      <p><a href="https://www.linkedin.com/in/girish-bhattarai/">LinkedIn</a> | 
+      <p>Email: <a href="mailto:contact@bhattaraigirish.com.np">contact@bhattaraigirish.com.np</a> | 
+      <a href="https://www.linkedin.com/in/girish-bhattarai/">LinkedIn</a> | 
          <a href="https://blog.bhattaraigirish.com.np/">Blog</a></p>
     </div>
   </section>
@@ -159,5 +159,17 @@
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
+
+  <script>
+    window.addEventListener("scroll", function() {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {  // when scrolled down 50px
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+  </script>
+  
 </body>
 </html>
